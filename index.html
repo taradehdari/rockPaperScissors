@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Sciessors</title>
+</head>
+<body>
+    <script type="text/javascript">
+    var computerChoices = ["r", "p", "s"];
+    var wins = 0;
+    var losses = 0;
+    var ties = 0;
+
+    for (var i = 0; i < 10; i++) {
+        var computerGuess = computerChoices[Math.floor(Math.random()*computerChoices.length)];
+
+        var userGuess = prompt ("Enter r, p, or s to play rock, paper, scissors!")
+        userGuess = userGuess.toLowerCase();
+
+        if (userGuess === "r" || userGuess === "p" || userGuess === "s") {
+            alert ("The computer chose " + computerGuess);
+
+            if ((userGuess === "r" && computerGuess === "s") || (userGuess === "p" && computerGuess === "r") || (userGuess === "s" && computerGuess === "p")){
+                wins++;
+                alert("you've won" + wins + "time(s)!");
+            } else if (userGuess === computerGuess) {
+                ties++;
+                alert("you've tied" + ties + "times(s).");    
+            } else {
+                losses++;
+                alert("you've lost" + losses + "time(s).");
+            }
+        }
+    }
+
+    alert("Total wins: " + wins + "\nTotal ties: " + ties + "\nTotal losses: " + losses);
+    </script>
+</body>
+</html>
